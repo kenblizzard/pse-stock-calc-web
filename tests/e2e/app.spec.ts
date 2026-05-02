@@ -8,7 +8,7 @@ test('supports the main calculator flows', async ({ page }) => {
   await page.getByTestId('price-profit-sell-price').fill('12')
 
   await expect(page.getByText('₱1,022.55')).toBeVisible()
-  await expect(page.getByText('₱1,170.22')).toBeVisible()
+  await expect(page.getByText('₱1,176.22')).toBeVisible()
 
   await page.getByRole('link', { name: 'Buying Power' }).click()
   await page.getByTestId('buying-power-budget').fill('5000')
@@ -44,5 +44,5 @@ test('keeps mobile navigation and ad slots usable', async ({ page }) => {
   await page.getByTestId('price-profit-buy-price').fill('10')
   await page.getByTestId('price-profit-sell-price').fill('12')
 
-  await expect(page.getByText('₱1,170.22')).toBeVisible()
+  await expect(page.getByText('₱1,176.22')).toBeVisible()
 })

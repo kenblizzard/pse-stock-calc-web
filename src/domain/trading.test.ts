@@ -26,8 +26,8 @@ describe('trading rules', () => {
       vat: 2.4,
       pseTransaction: 0.05,
       sccp: 0.1,
-      salesTax: 6,
-      totalFee: 28.55,
+      salesTax: 1,
+      totalFee: 23.55,
     })
   })
 
@@ -40,8 +40,8 @@ describe('trading rules', () => {
 
   it('computes transaction totals and break-even price', () => {
     expect(calculateTransactionTotal(10, 100, 'buy')).toBe(1022.55)
-    expect(calculateTransactionTotal(10, 100, 'sell')).toBe(971.45)
-    expect(calculateBreakEvenPrice(100, 10)).toBe(10.52)
+    expect(calculateTransactionTotal(10, 100, 'sell')).toBe(976.45)
+    expect(calculateBreakEvenPrice(100, 10)).toBe(10.48)
   })
 
   it('builds a budget plan using board-lot rounding', () => {
@@ -52,7 +52,7 @@ describe('trading rules', () => {
       totalAmount: 4823.12,
       averagePricePerShare: 12.0578,
       remainingBuyingPower: 176.88,
-      breakEvenPrice: 12.2,
+      breakEvenPrice: 12.14,
     })
   })
 
@@ -60,10 +60,10 @@ describe('trading rules', () => {
     const summary = calculatePriceProfitSummary(100, 10, 12)
 
     expect(summary.buyTotalAmount).toBe(1022.55)
-    expect(summary.sellTotalAmount).toBe(1170.22)
-    expect(summary.breakEvenPrice).toBe(10.52)
-    expect(summary.brokerProfit).toBe(170.22)
-    expect(summary.overallProfit).toBe(147.67)
+    expect(summary.sellTotalAmount).toBe(1176.22)
+    expect(summary.breakEvenPrice).toBe(10.48)
+    expect(summary.brokerProfit).toBe(176.22)
+    expect(summary.overallProfit).toBe(153.67)
   })
 
   it('aggregates multiple buy entries with fees included', () => {

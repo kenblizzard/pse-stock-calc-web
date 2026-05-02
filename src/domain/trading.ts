@@ -65,7 +65,7 @@ export const DEFAULT_FEE_SCHEDULE: FeeSchedule = {
   vatRate: 0.12,
   pseTransactionRate: 0.00005,
   sccpRate: 0.0001,
-  salesTaxRate: 0.006,
+  salesTaxRate: 0.001,
 }
 
 const tickSizeTable: RangeValue<number>[] = [
